@@ -14,12 +14,12 @@ const client = mqtt.connect(connectUrl, {
   password: "public",
   reconnectPeriod: 1000,
 });
-let topic2 = `${clientId}/HelloTopic2`;
-const topic = `${clientId}/HelloTopic`;
+
+const topic = `mqtt_070400b05bf2/HelloTopic2`;
 client.on("connect", () => {
   console.log("Connected");
-  client.subscribe([topic2], () => {
-    console.log(`Subscribe to topic '${topic2}'`);
+  client.subscribe([topic], () => {
+    console.log(`Subscribe to topic '${topic}'`);
   });
 });
 
